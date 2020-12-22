@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Weather Application</title>
+<script src="lib/angular.js"></script>
+<script src="util/util.js"></script>
+<script src="app.js"></script>
+</head>
+<body ng-app="weatherApp">
+	<div ng-controller="WeatherController">
+		<div><span>{{message}}</span></div>
+		<div>
+			<input type="text" ng-model="selectedCity" /> <select
+				ng-model="selectedCity" ng-options="c for c in cities"></select>
+		</div>
+		<div>
+			<button ng-click="getWeatherInformation(selectedCity)">SUBMIT</button>
+		</div>
+		<div>
+			<textarea>{{weatherData[selectedCity]}}</textarea>
+		</div>
+	</div>
+</body>
+</html>
